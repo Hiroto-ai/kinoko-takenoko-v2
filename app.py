@@ -40,6 +40,7 @@ def answer():
         # メッセージのフォーマット
         m = re.sub(r'\*(.+)\*', r'<strong>\1</strong>', m)
         m = re.sub(r'(\d{2,3})-\d+-\d+', r'\1-****-****', m)
+        m = re.sub(r'(https?://[A-Za-z0-9]+(\.[0-9a-zA-Z]+)+)',r'<a href = \1>\1</a>', message)
         message_html += f'<div class="alert {c}" role="alert">{m}</div>\n'
 	
 
